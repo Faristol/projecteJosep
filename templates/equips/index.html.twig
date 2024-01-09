@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquipsController!
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Detalls del Equip</h1>
+		{% if trobat %}
+
+			<p>Còdi:
+				{{ equip.codi }}</p>
+			<p>Nom:
+				{{ equip.nom }}</p>
+			<p>Cicle:
+				{{ equip.cicle }}</p>
+			<p>Curs:
+				{{ equip.curs }}</p>
+			<p>Membres:
+				{{ equip.membres | join(', ') }}</p>
+		</div>
+	{% else %}
+		<p>{{equip}}</p>
+	{% endif %}
+{% endblock %}

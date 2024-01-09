@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EquipsController!
+{% block title %}Equips
 {% endblock %}
 
 {% block body %}
@@ -19,7 +19,7 @@
 
 	<div class="example-wrapper">
 		<h1>Detalls del Equip</h1>
-		{% if trobat %}
+		{% if equip %}
 
 			<p>Còdi:
 				{{ equip.codi }}</p>
@@ -33,6 +33,6 @@
 				{{ equip.membres | join(', ') }}</p>
 		</div>
 	{% else %}
-		<p>{{equip}}</p>
+		<p>Equip no trobat</p>
 	{% endif %}
 {% endblock %}

@@ -39,7 +39,7 @@ class EquipsController extends AbstractController
         ],
     ];
     #[Route('/equips/{codi}', name: 'dades_equip',requirements: ['codi' => '\d+'])]
-    public function equips($codi): Response
+    public function equips($codi=1): Response
     {
         $equipBuscar = array_filter($this->equipos, function ($equip) use ($codi) {
             return $equip['codi'] == $codi;
@@ -48,13 +48,10 @@ class EquipsController extends AbstractController
             $equip = array_shift($equipBuscar);
             return $this->render('equips/index.html.twig', [
                 'equip' => $equip,
-                'trobat' => true,
             ]);
         }else{
-            $equip = 'Equip no trobat';
             return $this->render('equips/index.html.twig', [
-                'trobat' => false,
-                'equip' => $equip
+                'equip' => NULL
             ]);
 
         }

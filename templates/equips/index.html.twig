@@ -2,37 +2,44 @@
 
 {% block title %}Equips
 {% endblock %}
+{% block stylesheets %}
+
+	<link rel="stylesheet" href="{{ asset('estils/estilsEquips.css') }}"/>
+{% endblock %}
 
 {% block body %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
 
-	<div class="example-wrapper">
-		<h1>Detalls del Equip</h1>
-		{% if equip %}
 
-			<p>Còdi:
+	{% if equip %}
+		<h1 id="titolEquip">Dades de l'Equip {{equip.codi}}</h1>
+		<p class="paragrafEquip">
+			<img class="imatgeEquip" src="{{ asset('Impact/assets/img/equipImatge.jpeg') }}" alt=""></p>
+
+		<div class="paragrafEquip">
+			<p class="paragrafEquip"><strong>Codi:</strong>
 				{{ equip.codi }}</p>
-			<p>Nom:
+			<p class="paragrafEquip"><strong>Nom:</strong>
 				{{ equip.nom }}</p>
-			<p>Cicle:
+			<p class="paragrafEquip"><strong>Cicle:</strong>
 				{{ equip.cicle }}</p>
-			<p>Curs:
+			<p class="paragrafEquip"><strong>Curs:</strong>
 				{{ equip.curs }}</p>
-			<p>Membres:
-				{{ equip.membres | join(', ') }}</p>
+			<div class="paragrafEquip"><strong>Membres:</strong>
+				<ul>
+					{% for membre in equip.membres %}
+						<p class="paragrafEquip" style='background-color:grey'>{{ membre }}</p>
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
 	{% else %}
-		<p>Equip no trobat</p>
+		<h1 id="titolEquip">Dades Equip</h1>
+		<p class="paragrafEquip">
+			<img class="imatgeEquip" src="{{ asset('Impact/assets/img/cigala.jpeg') }}" alt=""></p>
+			<div class="paragrafEquip"><strong style='color:red'>Equip no trobat</strong></div>
 	{% endif %}
+	<div class="paragrafEquip">
+	<img id='imgMenuda' src="{{ asset('Impact/assets/img/home.png') }}" onclick="window.location='{{ path('inici')}}'" alt="">
+	<a href ="{{ path('inici')}}">Tornar a l'inici</a>
+	</div>
 {% endblock %}

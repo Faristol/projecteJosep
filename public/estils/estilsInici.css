@@ -24,4 +24,29 @@ h1#titolInici {
     width: 400px;
     margin: 10px;
    }
-   
+   .llistat{
+    width: 40%;
+    color: blue;
+    font-size: xx-large;
+   }
+   .llistatBaix{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 20%;
+    row-gap: 10px;
+    justify-content: center;
+   }
+.llistat, .llistatBaix{
+    border: solid black 1px;
+    margin: 10px auto;
+    text-align:center;
+    padding:10px;
+    background-color:#f2e7c3;
+}
+.llistatBaix>a{
+    border: 1px solid black;
+    color: green;
+    padding: 10px;
+    background-color:#f2e7c3;
+}
+    

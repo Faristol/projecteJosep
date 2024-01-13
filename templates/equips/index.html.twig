@@ -11,20 +11,25 @@
 
 
 	{% if equip %}
-		<h1 id="titolEquip">Dades de l'Equip {{equip.codi}}</h1>
+		<h1 id="titolEquip">Dades de l'Equip
+			{{equip.codi}}</h1>
 		<p class="paragrafEquip">
-			<img class="imatgeEquip" src="{{ asset('Impact/assets/img/equipImatge.jpeg') }}" alt=""></p>
-
+			<img class="imatgeEquip" src="{{ asset('imatges/' ~ equip.img) }}" alt=""></p>
 		<div class="paragrafEquip">
-			<p class="paragrafEquip"><strong>Codi:</strong>
+			<p class="paragrafEquip">
+				<strong>Codi:</strong>
 				{{ equip.codi }}</p>
-			<p class="paragrafEquip"><strong>Nom:</strong>
+			<p class="paragrafEquip">
+				<strong>Nom:</strong>
 				{{ equip.nom }}</p>
-			<p class="paragrafEquip"><strong>Cicle:</strong>
+			<p class="paragrafEquip">
+				<strong>Cicle:</strong>
 				{{ equip.cicle }}</p>
-			<p class="paragrafEquip"><strong>Curs:</strong>
+			<p class="paragrafEquip">
+				<strong>Curs:</strong>
 				{{ equip.curs }}</p>
-			<div class="paragrafEquip"><strong>Membres:</strong>
+			<div class="paragrafEquip">
+				<strong>Membres:</strong>
 				<ul>
 					{% for membre in equip.membres %}
 						<p class="paragrafEquip" style='background-color:grey'>{{ membre }}</p>
@@ -36,10 +41,12 @@
 		<h1 id="titolEquip">Dades Equip</h1>
 		<p class="paragrafEquip">
 			<img class="imatgeEquip" src="{{ asset('Impact/assets/img/cigala.jpeg') }}" alt=""></p>
-			<div class="paragrafEquip"><strong style='color:red'>Equip no trobat</strong></div>
+		<div class="paragrafEquip">
+			<strong style='color:red'>Equip no trobat</strong>
+		</div>
 	{% endif %}
 	<div class="paragrafEquip">
-	<img id='imgMenuda' src="{{ asset('Impact/assets/img/home.png') }}" onclick="window.location='{{ path('inici')}}'" alt="">
-	<a href ="{{ path('inici')}}">Tornar a l'inici</a>
+		<img id='imgMenuda' src="{{ asset('Impact/assets/img/home.png') }}" onclick="window.location='{{ path('inici')}}'" alt="">
+		<a href="{{ path('inici')}}">Tornar a l'inici</a>
 	</div>
 {% endblock %}
